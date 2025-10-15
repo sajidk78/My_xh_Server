@@ -14,7 +14,7 @@ var socket=null;
 var tunnel=null;
 var victimList={};
 var deviceList={};
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 
 const connect=(ip)=>{
     socket = ioc(ip);
@@ -304,4 +304,5 @@ rn_bridge.channel.on('connect', (ip) => {
 
 const log = (log) =>{
   rn_bridge.channel.post('log',log);
+
 }
